@@ -4,14 +4,6 @@
  */
 package br.com.trevisan.model;
 
-import static br.com.trevisan.model.Dia.DOMINGO;
-import static br.com.trevisan.model.Dia.QUARTA;
-import static br.com.trevisan.model.Dia.QUINTA;
-import static br.com.trevisan.model.Dia.SABADO;
-import static br.com.trevisan.model.Dia.SEGUNDA;
-import static br.com.trevisan.model.Dia.SEXTA;
-import static br.com.trevisan.model.Dia.TERCA;
-
 /**
  *
  * @author renanmarceluchoa
@@ -26,6 +18,15 @@ public class Ticket {
     private Dia dia;
     private Boolean feriado;
     private Double preco;
+    
+    public Ticket() {
+    
+    }
+    
+    public Ticket(Dia dia, Boolean feriado) {
+        this.dia = dia;
+        this.feriado = feriado;
+    }
     
     public Ticket(Categoria categoria, Dia dia, Boolean feriado) {
         this.categoria = categoria;
@@ -186,7 +187,7 @@ public class Ticket {
      * @return the preco
      */
     public Double getPreco() {
-        if (getPreco() == null) {
+        if (this.preco == null) {
             this.preco = this.calculaPreco();
         }
         return preco;

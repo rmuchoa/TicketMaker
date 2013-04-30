@@ -2,7 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.trevisan.model;
+package br.com.trevisan;
+
+import br.com.trevisan.model.Categoria;
+import br.com.trevisan.model.Dia;
+import br.com.trevisan.model.Ticket;
 
 /**
  *

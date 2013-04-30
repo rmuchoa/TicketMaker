@@ -25,29 +25,6 @@ public class TicketTest {
     @BeforeClass
     public static void setUpClass() {
         
-        tickets = new Ticket[] {
-            new Ticket(Categoria.CRIANCA,Dia.DOMINGO,false),
-            new Ticket(Categoria.CRIANCA,Dia.SEGUNDA,false),
-            new Ticket(Categoria.CRIANCA,Dia.TERCA,false),
-            new Ticket(Categoria.CRIANCA,Dia.QUARTA,false),
-            new Ticket(Categoria.CRIANCA,Dia.QUINTA,false),
-            new Ticket(Categoria.CRIANCA,Dia.SEXTA,false),
-            new Ticket(Categoria.CRIANCA,Dia.SABADO,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.DOMINGO,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.SEGUNDA,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.TERCA,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.QUARTA,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.QUINTA,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.SEXTA,false),
-            new Ticket(Categoria.ESTUDANTE,Dia.SABADO,false),
-            new Ticket(Categoria.IDOSO,Dia.DOMINGO,false),
-            new Ticket(Categoria.IDOSO,Dia.SEGUNDA,false),
-            new Ticket(Categoria.IDOSO,Dia.TERCA,false),
-            new Ticket(Categoria.IDOSO,Dia.QUARTA,false),
-            new Ticket(Categoria.IDOSO,Dia.QUINTA,false),
-            new Ticket(Categoria.IDOSO,Dia.SEXTA,false),
-            new Ticket(Categoria.IDOSO,Dia.SABADO,false)
-        };
         
     }
     
@@ -67,16 +44,308 @@ public class TicketTest {
      * Test of calculaPreço method, of class Ticket.
      */
     @Test
-    public void testCalculaPreco() {
-        System.out.println("calculaPreco");
-        Double[] expResult = new Double[] {
-            5.5, 4.7, 4.3, 3.1, 5.5, 4.62, 5.5, 8.0, 5.2, 5.2, 4.0, 5.2, 5.2, 8.0, 
-            5.7, 5.4, 5.1, 3.6, 4.2, 6.0, 5.7
-        };
-        for (int i=0; i<tickets.length; i++) {
-            Double result = tickets[i].calculaPreco();
-            assertEquals(expResult[i], result);
-        }
+    public void testCalculaPrecoDoIngressoParaCriancasNaSegunda() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNaSegunda");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.SEGUNDA,false);
+        Double resultadoEsperado = 4.7;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNaTerca() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNaTerca");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.TERCA,false);
+        Double resultadoEsperado = 4.3;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNaQuarta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNaQuarta");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.QUARTA,false);
+        Double resultadoEsperado = 3.1;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNaQuinta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNaQuinta");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.QUINTA,false);
+        Double resultadoEsperado = 5.5;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNaSexta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNaSexta");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.SEXTA,false);
+        Double resultadoEsperado = 4.62;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNoSabado() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNoSabado");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.SABADO,false);
+        Double resultadoEsperado = 5.5;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaCriancasNoDomingo() {
+        
+        System.out.println("calculaPrecoDoIngressoParaCriancasNoDomingo");
+        Ticket ticket = new Ticket(Categoria.CRIANCA,Dia.DOMINGO,false);
+        Double resultadoEsperado = 5.5;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNaSegunda() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNaSegunda");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.SEGUNDA,false);
+        Double resultadoEsperado = 5.2;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNaTerca() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNaTerca");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.TERCA,false);
+        Double resultadoEsperado = 5.2;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNaQuarta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNaQuarta");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.QUARTA,false);
+        Double resultadoEsperado = 4.0;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNaQuinta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNaQuinta");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.QUINTA,false);
+        Double resultadoEsperado = 5.2;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNaSexta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNaSexta");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.SEXTA,false);
+        Double resultadoEsperado = 5.2;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNoSabado() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNoSabado");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.SABADO,false);
+        Double resultadoEsperado = 8.0;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaEstudantesNoDomingo() {
+        
+        System.out.println("calculaPrecoDoIngressoParaEstudantesNoDomingo");
+        Ticket ticket = new Ticket(Categoria.ESTUDANTE,Dia.DOMINGO,false);
+        Double resultadoEsperado = 8.0;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaSegunda() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaSegunda");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.SEGUNDA,false);
+        Double resultadoEsperado = 5.4;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaTerca() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaTerca");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.TERCA,false);
+        Double resultadoEsperado = 5.1;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaQuarta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaQuarta");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.QUARTA,false);
+        Double resultadoEsperado = 3.6;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaQuinta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaQuinta");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.QUINTA,false);
+        Double resultadoEsperado = 4.2;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaSexta() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaSexta");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.SEXTA,false);
+        Double resultadoEsperado = 6.0;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNoSabado() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaSabado");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.SABADO,false);
+        Double resultadoEsperado = 5.7;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNoDomingo() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNoDomingo");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.DOMINGO,false);
+        Double resultadoEsperado = 5.7;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
+    }
+
+    /**
+     * Test of calculaPreço method, of class Ticket.
+     */
+    @Test
+    public void testCalculaPrecoDoIngressoParaIdososNaSextaFeriado() {
+        
+        System.out.println("calculaPrecoDoIngressoParaIdososNaSextaFeriado");
+        Ticket ticket = new Ticket(Categoria.IDOSO,Dia.SEXTA,true);
+        Double resultadoEsperado = 5.7;
+        Double resultadoObtido = ticket.calculaPreco();
+        assertEquals(resultadoEsperado, resultadoObtido);
+        
     }
 
 }
