@@ -4,6 +4,14 @@
  */
 package br.com.trevisan.model;
 
+import static br.com.trevisan.model.Dia.DOMINGO;
+import static br.com.trevisan.model.Dia.QUARTA;
+import static br.com.trevisan.model.Dia.QUINTA;
+import static br.com.trevisan.model.Dia.SABADO;
+import static br.com.trevisan.model.Dia.SEGUNDA;
+import static br.com.trevisan.model.Dia.SEXTA;
+import static br.com.trevisan.model.Dia.TERCA;
+
 /**
  *
  * @author renanmarceluchoa
@@ -15,11 +23,11 @@ public class Ticket {
     public static final Double PRECO_IDOSO = 6.0;
     
     private Categoria categoria;
-    private String dia;
+    private Dia dia;
     private Boolean feriado;
     private Double preco;
     
-    public Ticket(Categoria categoria, String dia, Boolean feriado) {
+    public Ticket(Categoria categoria, Dia dia, Boolean feriado) {
         this.categoria = categoria;
         this.dia = dia;
         this.feriado = feriado;
@@ -29,7 +37,107 @@ public class Ticket {
      * @return the price
      */
     public Double calculaPreco() {
-        return null;
+        
+        switch(categoria) {
+            
+            case CRIANCA :      this.preco = PRECO_CRIANCA;
+                                this.preco -= this.calculaDesconto(PRECO_ESTUDANTE);
+                                break;
+                           
+            case ESTUDANTE :    this.preco = PRECO_ESTUDANTE;
+                                this.preco -= this.calculaDesconto(PRECO_ESTUDANTE);
+                                break;
+                                
+            case IDOSO :        this.preco = PRECO_IDOSO;
+                                this.preco -= this.calculaDesconto(PRECO_IDOSO);
+                                break;
+        
+        }
+        
+        return this.arredondaDuasCasasDecimais(this.preco);
+        
+    }
+    
+    public Double calculaDesconto(Double preco) {
+        
+        Double desconto = this.calculaDescontoDia(preco);
+        Double descontoFeriado = this.calculaDescontoFeriado(preco);
+        Double descontoEstudante = this.calculaDescontoEstudante(preco);
+        
+        if (descontoFeriado > desconto)
+            desconto = descontoFeriado;
+        
+        if (descontoEstudante > desconto)
+            desconto = descontoEstudante;
+        
+        return desconto;
+        
+    }
+    
+    public Double calculaDescontoDia(Double preco) {
+        
+        Double desconto = 0.0;
+        
+        switch (dia) {
+        
+            case SEGUNDA :
+                desconto = preco * 0.1;
+                break;
+                
+            case TERCA :
+                if (categoria == Categoria.CRIANCA || categoria == Categoria.IDOSO)
+                    desconto = preco * 0.15;
+                else if (categoria == Categoria.ESTUDANTE)
+                    desconto = preco * 0.05;
+                break;
+                
+            case QUARTA :
+                if (categoria == Categoria.CRIANCA)
+                    desconto = preco * 0.3;
+                else if (categoria == Categoria.ESTUDANTE)
+                    desconto = preco * 0.5;
+                else if (categoria == Categoria.IDOSO)
+                    desconto = preco * 0.4;
+                break;
+                
+            case QUINTA :
+                if (categoria == Categoria.IDOSO || categoria == Categoria.ESTUDANTE)
+                    desconto = preco *  0.3;
+                break;
+                
+            case SEXTA :
+                if (categoria == Categoria.CRIANCA)
+                    desconto = preco * 0.11;
+                break;
+                
+            case SABADO : case DOMINGO :
+                if (categoria == Categoria.IDOSO)
+                    desconto = preco * 0.05;
+                break;
+        
+        }
+        
+        return desconto;
+        
+    }
+    
+    public Double calculaDescontoFeriado(Double preco) {
+        Double desconto = 0.0;
+        if (feriado && categoria == Categoria.IDOSO)
+            desconto = preco * 0.05;
+        return desconto;
+    }
+    
+    public Double calculaDescontoEstudante(Double preco) {
+        Double desconto = 0.0;
+        if (categoria == Categoria.ESTUDANTE && dia != Dia.SABADO && dia != Dia.DOMINGO)
+            desconto = preco * 0.35;
+        return desconto;
+    }
+    
+    public Double arredondaDuasCasasDecimais(Double valor) {
+        double arredondado = Math.round(valor * 100.0) / 100.0;
+        return arredondado;
     }
 
     /**
@@ -49,14 +157,14 @@ public class Ticket {
     /**
      * @return the dia
      */
-    public String getDia() {
+    public Dia getDia() {
         return dia;
     }
 
     /**
      * @param dia the dia to set
      */
-    public void setDia(String dia) {
+    public void setDia(Dia dia) {
         this.dia = dia;
     }
 
