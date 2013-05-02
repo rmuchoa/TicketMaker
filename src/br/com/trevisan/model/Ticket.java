@@ -10,28 +10,27 @@ package br.com.trevisan.model;
  */
 public abstract class Ticket {
     
-    public static final Double PRECO_CRIANCA = 5.5;
-    public static final Double PRECO_ESTUDANTE = 8.0;
-    public static final Double PRECO_IDOSO = 6.0;
-    
     protected Dia dia;
     protected Boolean feriado;
+    protected Double precoPadrao;
     protected Double preco;
     
     public Ticket() {
     
     }
     
-    public Ticket(Dia dia, Boolean feriado, Double preco) {
+    public Ticket(Dia dia, Boolean feriado) {
         this.dia = dia;
         this.feriado = feriado;
-        this.preco = preco;
     }
     
     public abstract Double calculaPreco();
     public abstract Double calculaDesconto(Double preco);
     public abstract Double calculaDescontoNoDia(Double preco);
     public abstract Double calculaDescontoNoFeriado(Double preco);
+    
+    public abstract Double getPrecoPadrao();
+    public abstract void setPrecoPadrao(Double precoPadrao);
 
     /**
      * @return the dia

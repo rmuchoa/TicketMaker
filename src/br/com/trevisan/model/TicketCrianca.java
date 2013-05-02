@@ -17,7 +17,7 @@ public class TicketCrianca extends Ticket {
     }
     
     public TicketCrianca(Dia dia, Boolean feriado) {
-        super(dia, feriado, PRECO_CRIANCA);
+        super(dia, feriado);
     }
     
     /**
@@ -28,7 +28,7 @@ public class TicketCrianca extends Ticket {
     @Override
     public Double calculaPreco() {
         
-        preco -= this.calculaDesconto(preco);
+        preco -= this.calculaDesconto(this.getPrecoPadrao());
         return Maths.arredondaDuasCasasDecimais(preco);
         
     }
@@ -93,6 +93,32 @@ public class TicketCrianca extends Ticket {
         
         Double desconto = 0.0;
         return desconto;
+        
+    }
+    
+    /**
+     * Retorna o preco padrão do Ticket Infantil
+     * 
+     * @return precoPadrao
+     */
+    @Override
+    public Double getPrecoPadrao() {
+        
+        if (precoPadrao == null) 
+            precoPadrao = 5.5;
+        return precoPadrao;
+        
+    }
+    
+    /**
+     * Altera o preco padrão do Ticket Infantil
+     * 
+     * @param precoPadrao 
+     */
+    @Override
+    public void setPrecoPadrao(Double precoPadrao) {
+        
+        this.precoPadrao = precoPadrao;
         
     }
     
