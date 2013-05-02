@@ -28,7 +28,8 @@ public class TicketIdoso extends Ticket {
     @Override
     public Double calculaPreco() {
         
-        preco -= this.calculaDesconto(this.getPrecoPadrao());
+        preco = this.getPrecoPadrao();
+        preco -= this.calculaDesconto(preco);
         return Maths.arredondaDuasCasasDecimais(preco);
         
     }

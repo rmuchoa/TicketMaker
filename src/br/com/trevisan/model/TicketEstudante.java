@@ -28,7 +28,8 @@ public class TicketEstudante extends Ticket {
     @Override
     public Double calculaPreco() {
         
-        preco -= this.calculaDesconto(getPrecoPadrao());
+        preco = this.getPrecoPadrao();
+        preco -= this.calculaDesconto(preco);
         return Maths.arredondaDuasCasasDecimais(preco);
         
     }
