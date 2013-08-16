@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.trevisan.util;
 
-/**
- *
- * @author renanmarceluchoa
- */
 public class Maths {
     
     public static Double arredondaDuasCasasDecimais(Double valor) {

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.trevisan.model;
 
 import org.junit.After;
@@ -11,10 +7,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author renanmarceluchoa
- */
 public class TicketEstudanteTest {
     
     private TicketEstudante ticket;
@@ -38,109 +30,67 @@ public class TicketEstudanteTest {
     public void tearDown() {
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante na segunda-feira
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNaSegunda() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNaSegunda() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNaSegunda");
         ticket = new TicketEstudante(Dia.SEGUNDA, false);
         Double resultadoEsperado = 5.2;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante na terça-feira
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNaTerca() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNaTerca() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNaTerca");
         ticket = new TicketEstudante(Dia.TERCA, false);
         Double resultadoEsperado = 5.2;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante na quarta-feira
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNaQuarta() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNaQuarta() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNaQuarta");
         ticket = new TicketEstudante(Dia.QUARTA, false);
         Double resultadoEsperado = 4.0;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante na quinta-feira
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNaQuinta() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNaQuinta() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNaQuinta");
         ticket = new TicketEstudante(Dia.QUINTA, false);
         Double resultadoEsperado = 5.2;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante na sexta-feira
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNaSexta() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNaSexta() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNaSexta");
         ticket = new TicketEstudante(Dia.SEXTA, false);
         Double resultadoEsperado = 5.2;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante no sábado
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNoSabado() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNoSabado() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNoSabado");
         ticket = new TicketEstudante(Dia.SABADO, false);
         Double resultadoEsperado = 8.0;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
 
-    /**
-     * Teste do método calculaPreço da classe Ticket.
-     * Calcula o preço de um Ingresso para um estudante no domingo
-     */
     @Test
-    public void testCalculaPrecoDoIngressoParaEstudantesNoDomingo() {
-        
+    public void deveCalcularPrecoDoIngressoParaEstudantesNoDomingo() {
         System.out.println("calculaPrecoDoIngressoParaEstudantesNoDomingo");
         ticket = new TicketEstudante(Dia.DOMINGO, false);
         Double resultadoEsperado = 8.0;
         Double resultadoObtido = ticket.calculaPreco();
         assertEquals(resultadoEsperado, resultadoObtido);
-        
     }
     
 }

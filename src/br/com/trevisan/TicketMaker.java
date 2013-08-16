@@ -1,20 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.trevisan;
 
-import br.com.trevisan.model.Categoria;
 import br.com.trevisan.model.Dia;
 import br.com.trevisan.model.Ticket;
 import br.com.trevisan.model.TicketCrianca;
 import br.com.trevisan.model.TicketEstudante;
 import br.com.trevisan.model.TicketIdoso;
 
-/**
- *
- * @author renanmarceluchoa
- */
 public class TicketMaker {
     
     public static void main (String args[]) {

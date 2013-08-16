@@ -32,44 +32,26 @@ public abstract class Ticket {
     public abstract Double getPrecoPadrao();
     public abstract void setPrecoPadrao(Double precoPadrao);
 
-    /**
-     * @return the dia
-     */
     public Dia getDia() {
         return dia;
     }
 
-    /**
-     * @param dia the dia to set
-     */
     public void setDia(Dia dia) {
         this.dia = dia;
     }
 
-    /**
-     * @return the feriado
-     */
     public Boolean getFeriado() {
         return feriado;
     }
 
-    /**
-     * @param feriado the feriado to set
-     */
     public void setFeriado(Boolean feriado) {
         this.feriado = feriado;
     }
 
-    /**
-     * @return the preco
-     */
     public Double getPreco() {
         return preco;
     }
 
-    /**
-     * @param preco the preco to set
-     */
     public void setPreco(Double preco) {
         this.preco = preco;
     }
